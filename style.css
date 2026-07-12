@@ -38,33 +38,31 @@ button {
 .header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
+  width: fit-content;
   padding: 22px 0;
-  border-bottom: 1px solid var(--text);
 
-  background: rgba(243, 242, 238, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
+  border: 0;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 /* Dynamic logo: CloudFunding → CF → ClementFang */
 .type-logo {
   display: inline-block;
-  min-width: 13ch;
+  min-width: 8ch;
 
   color: inherit;
   text-decoration: none;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: clamp(25px, 2.3vw, 42px);
   font-weight: 900;
   line-height: 0.92;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.02em;
 
   white-space: nowrap;
   cursor: pointer;
@@ -105,29 +103,6 @@ button {
 .type-logo:focus-visible {
   outline: 1px solid currentColor;
   outline-offset: 6px;
-}
-
-.header p {
-  margin: 7px 0 0;
-  color: var(--secondary);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 11px;
-  line-height: 1.3;
-}
-
-nav {
-  display: flex;
-  gap: 24px;
-}
-
-nav a {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 12px;
-}
-
-nav a:hover,
-nav a:focus-visible {
-  text-decoration: underline;
 }
 
 /* =========================
