@@ -56,7 +56,7 @@ if (logo && logoText) {
       ending = ending.slice(0, -1);
       render(middle, ending);
 
-      await wait(18);
+      await wait(24);
     }
 
     /* 刪除 C 與 F 之間的文字，留下 CF */
@@ -66,10 +66,10 @@ if (logo && logoText) {
       middle = middle.slice(0, -1);
       render(middle, ending);
 
-      await wait(18);
+      await wait(24);
     }
 
-    await wait(20);
+    await wait(50);
 
     /* 在 C 與 F 之間打出新文字 */
     for (
@@ -82,7 +82,7 @@ if (logo && logoText) {
       middle = targetParts.middle.slice(0, index);
       render(middle, ending);
 
-      await wait(20);
+      await wait(30);
     }
 
     /* 在 F 後面打出新文字 */
@@ -96,7 +96,7 @@ if (logo && logoText) {
       ending = targetParts.ending.slice(0, index);
       render(middle, ending);
 
-      await wait(20);
+      await wait(30);
     }
   }
 
