@@ -33,41 +33,42 @@
 
 
   <!-- 两个互动分类按钮 -->
+ <main class="work-index">
+
+  <!-- 分类按钮：属于页面内容，会跟着网页滚动 -->
   <nav
     class="category-switch"
     role="tablist"
     aria-label="Portfolio categories"
   >
 
+    <!-- Projects 放到前面，并设为默认显示 -->
     <button
-      id="illustration-tab"
+      id="projects-tab"
       class="category-button is-active"
       type="button"
       role="tab"
       aria-selected="true"
-      aria-controls="illustration-panel"
-      data-category-target="illustration-panel"
-    >
-      Illustration
-    </button>
-
-    <button
-      id="projects-tab"
-      class="category-button"
-      type="button"
-      role="tab"
-      aria-selected="false"
       aria-controls="projects-panel"
       data-category-target="projects-panel"
-      tabindex="-1"
     >
       Projects
     </button>
 
+    <button
+      id="illustration-tab"
+      class="category-button"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="illustration-panel"
+      data-category-target="illustration-panel"
+      tabindex="-1"
+    >
+      Illustration
+    </button>
+
   </nav>
-
-
-  <main class="work-index">
 
     <!-- =========================
          Illustration
