@@ -68,7 +68,7 @@ if (logo && logoText) {
 
       ending = ending.slice(0, -1);
       render(middle, ending);
-      await wait(18);
+      await wait(32);
     }
 
     while (middle.length > 0) {
@@ -78,10 +78,10 @@ if (logo && logoText) {
 
       middle = middle.slice(0, -1);
       render(middle, ending);
-      await wait(18);
+      await wait(32);
     }
 
-    await wait(20);
+    await wait(50);
 
     for (
       let index = 1;
@@ -94,7 +94,7 @@ if (logo && logoText) {
 
       middle = targetParts.middle.slice(0, index);
       render(middle, ending);
-      await wait(28);
+      await wait(50);
     }
 
     for (
@@ -108,7 +108,7 @@ if (logo && logoText) {
 
       ending = targetParts.ending.slice(0, index);
       render(middle, ending);
-      await wait(28);
+      await wait(50);
     }
   }
 
