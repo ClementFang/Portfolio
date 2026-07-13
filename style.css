@@ -343,44 +343,37 @@ font-family: "IBM Plex Mono", monospace;
 }
 
 
-/* 第一行：PROJECT / ILLUSTRATION */
-
+/* 移除图片下方的 PROJECT / ILLUSTRATION */
 .work-caption::before {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  content: none;
+  display: none;
 }
 
-
-/* Projects 分類顯示 PROJECT */
-
-.projects-panel .work-caption::before {
-  content: "PROJECT";
-}
-
-
-/* Illustration 分類顯示 ILLUSTRATION */
-
-.illustration-panel .work-caption::before {
-  content: "ILLUSTRATION";
-}
-
-
-/* 第二行：作品名稱 */
-
+/* 作品名称 */
 .work-caption h2 {
+  margin: 0;
+
+  font-family: "IBM Plex Mono", monospace;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.35;
+
+  letter-spacing: 0;
+  text-align: center;
 }
 
-/* 第三行：年份 */
-
+/* 年份 */
 .work-caption time {
+  margin-top: 8px;
+
+  font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   font-weight: 400;
-}
+  line-height: 1;
 
+  letter-spacing: 0;
+  text-align: center;
+}
 
 /* 图片比例 */
 
