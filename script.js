@@ -100,19 +100,41 @@ if (logo && logoText) {
     }
   }
 
-  logo.addEventListener("pointerenter", () => {
-    morphTo(hoverText);
-  });
+ let isHovering = false;
+let isFocused = false;
+let requestedText = defaultText;
 
-  logo.addEventListener("pointerleave", () => {
-    morphTo(defaultText);
-  });
+function updateLogoState() {
+  const targetText =
+    isHovering || isFocused
+      ? hoverText
+      : defaultText;
 
-  logo.addEventListener("focus", () => {
-    morphTo(hoverText);
-  });
+  /* 已經在前往相同名稱時，不再重複觸發 */
+  if (targetText === requestedText) {
+    return;
+  }
 
-  logo.addEventListener("blur", () => {
-    morphTo(defaultText);
-  });
+  requestedText = targetText;
+  morphTo(targetText);
 }
+
+logo.addEventListener("pointerenter", () => {
+  isHovering = true;
+  updateLogoState();
+});
+
+logo.addEventListener("pointerleave", () => {
+  isHovering = false;
+  updateLogoState();
+});
+
+logo.addEventListener("focus", () => {
+  isFocused = true;
+  updateLogoState();
+});
+
+logo.addEventListener("blur", () => {
+  isFocused = false;
+  updateLogoState();
+});
