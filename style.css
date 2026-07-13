@@ -204,7 +204,7 @@ img {
   min-height: 100vh;
 
   padding:
-    210px
+    180px
     28px
     140px;
 }
@@ -501,12 +501,14 @@ img {
   }
 
   .category-switch {
-    top: 105px;
-    left: 16px;
-    right: auto;
+  position: relative;
 
-    gap: 7px;
-  }
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  gap: 7px;
+  margin-bottom: 48px;
+}
 
   .category-button {
     padding: 9px 15px;
@@ -514,13 +516,12 @@ img {
     font-size: 12px;
   }
 
-  .work-index {
-    padding:
-      175px
-      16px
-      90px;
-  }
-
+ .work-index {
+  padding:
+    145px
+    16px
+    90px;
+}
   .illustration-grid,
   .projects-grid {
     grid-template-columns: 1fr;
