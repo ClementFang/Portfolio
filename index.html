@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudFunding — ClementFang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <a
+      class="type-logo"
+      href="index.html"
+      data-default="CloudFunding"
+      data-hover="ClementFang"
+      aria-label="CloudFunding — ClementFang"
+    >
+      <span class="type-logo-text" aria-hidden="true">CloudFunding</span>
+    </a>
+  </header>
+
+  <main class="work-index">
+
+    <div class="category-switch" role="tablist" aria-label="Work categories">
+      <button
+        id="illustration-tab"
+        class="category-button is-active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="illustration-panel"
+        data-category-target="illustration-panel"
+      >
+        Illustration
+      </button>
+
+      <button
+        id="projects-tab"
+        class="category-button"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="projects-panel"
+        data-category-target="projects-panel"
+      >
+        Projects
+      </button>
+    </div>
+
+    <section
+      id="illustration-panel"
+      class="category-panel illustration-panel is-active"
+      role="tabpanel"
+      aria-labelledby="illustration-tab"
+    >
+      <div class="illustration-grid">
+
+        <article class="work-card illustration-card illustration-card--one">
+          <a href="#">
+            <div class="work-media media-landscape" data-placeholder="ILL—01">
+              <img src="assets/illustration/illustration-01.jpg" alt="Spatial Drawing No. 01">
+            </div>
+            <div class="work-caption">
+              <h2>Spatial Drawing No. 01</h2>
+              <time datetime="2026">2026</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card illustration-card illustration-card--two">
+          <a href="#">
+            <div class="work-media media-portrait" data-placeholder="ILL—02">
+              <img src="assets/illustration/illustration-02.jpg" alt="Material Landscape">
+            </div>
+            <div class="work-caption">
+              <h2>Material Landscape</h2>
+              <time datetime="2026">2026</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card illustration-card illustration-card--three">
+          <a href="#">
+            <div class="work-media media-square" data-placeholder="ILL—03">
+              <img src="assets/illustration/illustration-03.jpg" alt="Cloud Archive">
+            </div>
+            <div class="work-caption">
+              <h2>Cloud Archive</h2>
+              <time datetime="2025">2025</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card illustration-card illustration-card--four">
+          <a href="#">
+            <div class="work-media media-wide" data-placeholder="ILL—04">
+              <img src="assets/illustration/illustration-04.jpg" alt="Field Study">
+            </div>
+            <div class="work-caption">
+              <h2>Field Study</h2>
+              <time datetime="2025">2025</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card illustration-card illustration-card--five">
+          <a href="#">
+            <div class="work-media media-portrait" data-placeholder="ILL—05">
+              <img src="assets/illustration/illustration-05.jpg" alt="Sectional Memory">
+            </div>
+            <div class="work-caption">
+              <h2>Sectional Memory</h2>
+              <time datetime="2025">2025</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card illustration-card illustration-card--six">
+          <a href="#">
+            <div class="work-media media-landscape" data-placeholder="ILL—06">
+              <img src="assets/illustration/illustration-06.jpg" alt="Atmospheric Index">
+            </div>
+            <div class="work-caption">
+              <h2>Atmospheric Index</h2>
+              <time datetime="2024">2024</time>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section
+      id="projects-panel"
+      class="category-panel projects-panel"
+      role="tabpanel"
+      aria-labelledby="projects-tab"
+      hidden
+    >
+      <div class="projects-grid">
+
+        <article class="work-card project-card">
+          <a href="#">
+            <div class="work-media media-landscape" data-placeholder="PRJ—01">
+              <img src="assets/projects/nottingham.jpg" alt="Nottingham Contemporary">
+            </div>
+            <div class="work-caption">
+              <h2>Nottingham Contemporary</h2>
+              <time datetime="2026">2026</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card project-card">
+          <a href="#">
+            <div class="work-media media-landscape" data-placeholder="PRJ—02">
+              <img src="assets/projects/bridge.jpg" alt="Bridge and Movement">
+            </div>
+            <div class="work-caption">
+              <h2>Bridge and Movement</h2>
+              <time datetime="2026">2026</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card project-card">
+          <a href="#">
+            <div class="work-media media-portrait" data-placeholder="PRJ—03">
+              <img src="assets/projects/wind-mapping.jpg" alt="Wind Mapping Study">
+            </div>
+            <div class="work-caption">
+              <h2>Wind Mapping Study</h2>
+              <time datetime="2025">2025</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card project-card">
+          <a href="#">
+            <div class="work-media media-square" data-placeholder="PRJ—04">
+              <img src="assets/projects/monobloc.jpg" alt="Monobloc Investigation">
+            </div>
+            <div class="work-caption">
+              <h2>Monobloc Investigation</h2>
+              <time datetime="2025">2025</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card project-card">
+          <a href="#">
+            <div class="work-media media-wide" data-placeholder="PRJ—05">
+              <img src="assets/projects/east-bay.jpg" alt="East Bay Bike Path">
+            </div>
+            <div class="work-caption">
+              <h2>East Bay Bike Path</h2>
+              <time datetime="2025">2025</time>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-card project-card">
+          <a href="#">
+            <div class="work-media media-landscape" data-placeholder="PRJ—06">
+              <img src="assets/projects/two-children.jpg" alt="Two Children Looking at a Book">
+            </div>
+            <div class="work-caption">
+              <h2>Two Children Looking at a Book</h2>
+              <time datetime="2025">2025</time>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
