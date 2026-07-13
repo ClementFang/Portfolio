@@ -81,7 +81,7 @@ if (logo && logoText) {
       await wait(32);
     }
 
-    await wait(50);
+    await wait(80);
 
     for (
       let index = 1;
