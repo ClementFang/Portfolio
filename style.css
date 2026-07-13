@@ -51,7 +51,7 @@ button {
   position: relative;
 
   /* 固定滑鼠感應範圍，不跟文字長度變化 */
-  width: 9em;
+  width: 10em;
   height: 2em;
 
   color: inherit;
