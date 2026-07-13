@@ -60,15 +60,14 @@ img {
 }
 
 
-/* 固定感应区域，避免动画反复触发 */
-
+/* 固定感应范围，但尺寸由较长名称自动决定 */
 .type-logo {
-  display: block;
+  display: inline-grid;
   position: relative;
 
-  /* 固定滑鼠感應範圍 */
-  width: 10em;
-  height: 1.5em;
+  width: max-content;
+  height: auto;
+  padding-right: 6px;
 
   color: inherit;
   text-decoration: none;
@@ -83,17 +82,39 @@ img {
   cursor: pointer;
 }
 
+/* 隐形放入 CloudFunding，用来计算宽度 */
+.type-logo::before {
+  content: attr(data-default);
 
-.type-logo-text {
-  display: inline-block;
-  white-space: nowrap;
+  grid-column: 1;
+  grid-row: 1;
 
-  transform: scaleX(1) scaleY(1);
-  transform-origin: left center;
-
+  visibility: hidden;
   pointer-events: none;
 }
 
+/* 隐形放入 ClementFang，用来计算宽度 */
+.type-logo::after {
+  content: attr(data-hover);
+
+  grid-column: 1;
+  grid-row: 1;
+
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* 真正显示并进行动画的文字 */
+.type-logo-text {
+  grid-column: 1;
+  grid-row: 1;
+
+  display: inline-block;
+  white-space: nowrap;
+
+  transform: none;
+  pointer-events: none;
+}
 
 /* 名字后方闪烁光标 */
 
