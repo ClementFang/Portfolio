@@ -122,7 +122,6 @@ window.PORTFOLIO_WORKS = {
       ]
     }
   ],
-
   projects: [
     {
       id: "PRJ-001",
