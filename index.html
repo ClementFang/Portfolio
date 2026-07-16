@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clement Fang portfolio archive">
+  <title>CloudFunding — ClementFang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a
+      class="type-logo"
+      href="index.html"
+      data-default="CloudFunding"
+      data-hover="ClementFang"
+      aria-label="CloudFunding — ClementFang"
+    >
+      <span class="type-logo-text" aria-hidden="true">CloudFunding</span>
+    </a>
+  </header>
+
+  <main class="work-index">
+    <div class="category-switch" role="tablist" aria-label="作品分類">
+      <button
+        id="illustration-tab"
+        class="category-button is-active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="illustration-panel"
+        data-category-target="illustration-panel"
+      >Illustration</button>
+
+      <button
+        id="projects-tab"
+        class="category-button"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="projects-panel"
+        data-category-target="projects-panel"
+      >Projects</button>
+    </div>
+
+    <section
+      id="illustration-panel"
+      class="category-panel is-active"
+      role="tabpanel"
+      aria-labelledby="illustration-tab"
+    >
+      <div id="illustration-grid" class="illustration-grid" aria-live="polite"></div>
+    </section>
+
+    <section
+      id="projects-panel"
+      class="category-panel"
+      role="tabpanel"
+      aria-labelledby="projects-tab"
+      hidden
+    >
+      <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="works.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

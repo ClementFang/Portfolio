@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clement Fang artwork detail">
+  <title>Artwork — ClementFang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a
+      class="type-logo"
+      href="index.html#illustration"
+      data-default="CloudFunding"
+      data-hover="ClementFang"
+      aria-label="CloudFunding — ClementFang"
+    >
+      <span class="type-logo-text" aria-hidden="true">CloudFunding</span>
+    </a>
+  </header>
+
+  <main class="artwork-page">
+    <nav class="artwork-navigation" aria-label="作品頁導航">
+      <a href="index.html#illustration">← Illustration</a>
+    </nav>
+
+    <header class="artwork-information">
+      <div>
+        <p id="artwork-number" class="artwork-number"></p>
+        <h1 id="artwork-title">Loading…</h1>
+      </div>
+
+      <dl class="artwork-metadata">
+        <div>
+          <dt>Year</dt>
+          <dd id="artwork-year"></dd>
+        </div>
+        <div>
+          <dt>Medium</dt>
+          <dd id="artwork-medium"></dd>
+        </div>
+      </dl>
+
+      <p id="artwork-description" class="artwork-description"></p>
+    </header>
+
+    <section id="artwork-gallery" class="artwork-gallery" aria-live="polite"></section>
+  </main>
+
+  <dialog id="image-viewer" class="image-viewer" aria-label="图片查看器">
+    <button
+      id="image-viewer-close"
+      class="image-viewer-close"
+      type="button"
+      aria-label="关闭图片"
+    >×</button>
+    <img id="image-viewer-image" src="" alt="">
+    <p id="image-viewer-caption"></p>
+  </dialog>
+
+  <script src="works.js"></script>
+  <script src="script.js"></script>
+  <script src="artwork.js"></script>
+</body>
+</html>
