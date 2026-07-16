@@ -152,15 +152,88 @@ function createCard(work, category) {
   media.className = `work-media media-${ratio}`;
   media.dataset.placeholder = work.id || "IMAGE";
 
+  if (
+  category === "illustration" &&
+  work.previewVideo
+) {
+  const video = document.createElement("video");
+
+  video.className = "preview-video";
+
+  video.src =
+    `${folder}/${work.previewVideo}` +
+    `?v=${encodeURIComponent(portfolioVersion)}`;
+
+  video.autoplay = true;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.preload = "auto";
+  video.controls = false;
+  video.disablePictureInPicture = true;
+
+  /*
+    同时写入 HTML 属性，提高手机浏览器
+    静音自动播放的成功率。
+  */
+  video.setAttribute("autoplay", "");
+  video.setAttribute("muted", "");
+  video.setAttribute("loop", "");
+  video.setAttribute("playsinline", "");
+
+  video.setAttribute(
+    "aria-label",
+    `${work.title || work.id || "Animation"} preview`
+  );
+
+  video.addEventListener(
+    "canplay",
+    () => {
+      video.play().catch(() => {});
+    },
+    { once: true }
+  );
+
+  video.addEventListener(
+    "error",
+    () => {
+      media.classList.add("is-placeholder");
+    },
+    { once: true }
+  );
+
+  media.appendChild(video);
+
+} else {
   const image = document.createElement("img");
-  image.src = `${folder}/${work.cover}?v=${encodeURIComponent(portfolioVersion)}`;
-  image.alt = work.title || work.id || "Portfolio image";
+
+  image.src =
+    `${folder}/${work.cover}` +
+    `?v=${encodeURIComponent(portfolioVersion)}`;
+
+  image.alt =
+    work.title ||
+    work.id ||
+    "Portfolio image";
+
   image.loading = "lazy";
   image.decoding = "async";
-  image.classList.add(`fit-${fit}`);
-  image.addEventListener("error", () => media.classList.add("is-placeholder"), { once: true });
+
+  image.classList.add(
+    `fit-${fit}`
+  );
+
+  image.addEventListener(
+    "error",
+    () => {
+      media.classList.add("is-placeholder");
+    },
+    { once: true }
+  );
 
   media.appendChild(image);
+}
 
   const caption = document.createElement("div");
   caption.className = "work-caption";
@@ -198,6 +271,47 @@ renderCategory("projects", "#projects-grid");
 /* =========================
    Category tabs
 ========================= */
+
+/* =========================
+   Animation preview playback
+========================= */
+
+const previewVideos =
+  document.querySelectorAll(
+    ".preview-video"
+  );
+
+if ("IntersectionObserver" in window) {
+  const previewObserver =
+    new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (
+            entry.isIntersecting &&
+            entry.intersectionRatio >= 0.25
+          ) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: [0, 0.25, 0.75]
+      }
+    );
+
+  previewVideos.forEach((video) => {
+    previewObserver.observe(video);
+  });
+
+} else {
+  previewVideos.forEach((video) => {
+    video.play().catch(() => {});
+  });
+}
 
 const categoryButtons = Array.from(document.querySelectorAll("[data-category-target]"));
 const categoryPanels = Array.from(document.querySelectorAll(".category-panel"));
